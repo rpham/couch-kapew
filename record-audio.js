@@ -11,6 +11,16 @@ function updateTimeLeft() {
     timeLeftDisplay.textContent = `${timeLeft / 1000} seconds`;
 }
 
+function resetRecordAudioState() {
+    const recordButton = document.getElementById('record-button');
+    const playButton = document.getElementById('play-button');
+    const doneRecordingButton = document.getElementById('done-recording-button');
+
+    recordButton.disabled = false;
+    playButton.disabled = true;
+    doneRecordingButton.disabled = true;
+}
+
 // Get the user's permission to access the microphone
 navigator.mediaDevices.getUserMedia({ audio: true })
     .then(stream => {
@@ -84,6 +94,8 @@ navigator.mediaDevices.getUserMedia({ audio: true })
     });
 
 
-export function getPlayerSoundChunks() {
+function getPlayerSoundChunks() {
     return chunks;
 }
+
+export { getPlayerSoundChunks, resetRecordAudioState };

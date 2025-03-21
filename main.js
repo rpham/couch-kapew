@@ -2,7 +2,7 @@ import { KeyCode, Action } from "./enums.js";
 import { Player } from "./player.js";
 import { CollisionHandler } from "./collisionHandler.js";
 import { MapBuilder, MapManager } from "./map.js";
-import { getPlayerSoundChunks } from "./record-audio.js";
+import { getPlayerSoundChunks, resetRecordAudioState } from "./record-audio.js";
 import { canvas, clearCanvas } from "./draw-doodle.js";
 
 let player1 = null;
@@ -73,6 +73,7 @@ function player2DoneRecordingButton() {
 function player1DoneRecordingButton() {
     setHeaderPrefix(2);
     screenManager.show(SCREENS.DRAW_DOODLE);
+    resetRecordAudioState();
 
     const doodleUrl = canvas.toDataURL("image/png");
     const audioChunks = getPlayerSoundChunks();
