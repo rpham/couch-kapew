@@ -104,14 +104,14 @@ document.getElementById("ready-button").addEventListener("click", startGame);
 
 const GameSettings = {
     PLAYER_SPEED: 5,
-    PLAYER_WIDTH: 50,
-    PLAYER_HEIGHT: 50,
+    PLAYER_WIDTH: 100,
+    PLAYER_HEIGHT: 100,
     WALL_WIDTH: 10,
     PROJECTILE_SETTINGS: {
         concurrentLimit: 5,
         coolDownMs: 100,
-        height: 5,
-        width: 5,
+        height: 10,
+        width: 10,
         speed: 7,
     }
 };

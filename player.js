@@ -13,9 +13,13 @@ class Player {
      */
     constructor(div, speed, width, height, lastDirection, doodleUrl, soundUrl, projectileSettings, mapDiv) {
         this.queuedKeys = {};
+
+        div.style.backgroundSize = `${width}px ${height}px`;
+        div.style.backgroundImage = `url(${doodleUrl})`;
+        div.style.width = `${width}px`;
+        div.style.height = `${height}px`;
         this.div = div;
-        this.div.style.backgroundSize = `${width}px ${height}px`;
-        this.div.style.backgroundImage = `url(${doodleUrl})`;
+        
         this.speed = speed;
         this.width = width;
         this.height = height;
