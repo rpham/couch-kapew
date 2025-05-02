@@ -226,17 +226,20 @@ class Game {
 
     tick() {
         this.collisionHandler.movePlayers();
-        const playerWasHit = this.collisionHandler.moveProjectiles(this.player1, this.player2);
-        const isGameOver = playerWasHit[0] || playerWasHit[1];
+        const { p1Loses, p2Loses } = this.collisionHandler.moveProjectiles(this.player1, this.player2);
+        const isGameOver = p1Loses || p2Loses;
 
         if (isGameOver) {
-            if (playerWasHit[0]) {
+            if (p2Loses) {
                 this.player1.addScore();
-            } else if (playerWasHit[1]) {
+            } else if (p1Loses) {
                 this.player2.addScore();
             }
 
             this.resetMap();
+
+            document.getElementById("player1-score").textContent = this.player1.score;
+            document.getElementById("player2-score").textContent = this.player2.score;
 
             this.player1.reset();
             this.player2.reset();

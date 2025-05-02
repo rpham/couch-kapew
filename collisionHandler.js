@@ -322,6 +322,13 @@ class CollisionHandler {
         return false;
     }
 
+    /**
+     * Move all the projectiles and check for collision with the other player and with the walls.
+     * If a projectile hits the other player, that player loses.
+     * If a projectile hits a wall, it is removed.
+     * @returns {Object} - an object with two properties, `p1Loses` and `p2Loses`, which are
+     * booleans indicating whether the corresponding player loses.
+     */
     moveProjectiles() {
         // internally handle creating new projectiles if applicable
         // and immediately check collision.
@@ -342,7 +349,7 @@ class CollisionHandler {
         // this is a very leaky abstraction - into collisionHandler
         // but a generic return of "hits" with the source and target
         // seems annoying to parse
-        return [p1Loses, p2Loses];
+        return { p1Loses, p2Loses }
     }
 }
 
