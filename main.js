@@ -130,11 +130,16 @@ const Player1KeyToAction = {
 }
 
 const Player2KeyToAction = {
-    [KeyCode.ARROW_UP]: Action.UP,
-    [KeyCode.ARROW_DOWN]: Action.DOWN,
-    [KeyCode.ARROW_LEFT]: Action.LEFT,
-    [KeyCode.ARROW_RIGHT]: Action.RIGHT,
-    [KeyCode.SHIFT]: Action.FIRE,
+    [KeyCode.LOWER_O]: Action.UP,
+    [KeyCode.LOWER_L]: Action.DOWN,
+    [KeyCode.LOWER_K]: Action.LEFT,
+    [KeyCode.SEMICOLON]: Action.RIGHT,
+    [KeyCode.UPPER_O]: Action.UP,
+    [KeyCode.UPPER_L]: Action.DOWN,
+    [KeyCode.UPPER_K]: Action.LEFT,
+    [KeyCode.COLON]: Action.RIGHT,
+    [KeyCode.LOWER_N]: Action.FIRE,
+    [KeyCode.UPPER_N]: Action.FIRE,
 }
 
 const Directions = new Set([Action.UP, Action.DOWN, Action.LEFT, Action.RIGHT]);

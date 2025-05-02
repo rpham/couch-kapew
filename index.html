@@ -40,17 +40,17 @@
         }
 
         #player1 {
-            background-color: #f6685e;
             position: absolute;
             top: 50%;
             left: 0;
+            border-style: dashed;
         }
 
         #player2 {
-            background-color: #4dabf5;
             position: absolute;
             top: 50%;
             right: 0;
+            border-style: dashed;
         }
     </style>
 </head>
@@ -58,6 +58,7 @@
 <body>
     <div id="draw-doodle" class="screen active">
         <h2><span id="draw-doodle-prefix"></span>Draw Doodle</h2>
+        <p>Have the other player leave the room!</p>
         <canvas id="canvas"></canvas>
         <button id="done-drawing-button">Next</button>
     </div>
@@ -76,6 +77,9 @@
     <div id="ready" class="step screen">
         <h2>Ready?</h2>
         <p>Call Player 1 back into the room</p>
+        <p>Player 1 Controls - Move: WASD, Fire: Space</p>
+        <p>Player 2 Controls - Move: OKL;, Fire: N</p>
+        <p>Player 1 spawns left. Player 2 spawns right.</p>
         <button id="ready-button">Start Game!</button>
     </div>
 

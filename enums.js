@@ -1,8 +1,12 @@
 const KeyCode = {
-    ARROW_UP: "ArrowUp",
-    ARROW_DOWN: "ArrowDown",
-    ARROW_LEFT: "ArrowLeft",
-    ARROW_RIGHT: "ArrowRight",
+    LOWER_O: "o",
+    LOWER_L: "l",
+    LOWER_K: "k",
+    SEMICOLON: ";",
+    COLON: ":",
+    UPPER_O: "O",
+    UPPER_L: "L",
+    UPPER_K: "K",
     LOWER_A: "a",
     LOWER_D: "d",
     LOWER_W: "w",
@@ -13,7 +17,8 @@ const KeyCode = {
     UPPER_S: "S",
     SPACE: " ",
     CTRL: "Control",
-    SHIFT: "Shift",
+    LOWER_N: "n",
+    UPPER_N: "N",
 };
 
 const Action = {
