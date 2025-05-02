@@ -324,10 +324,10 @@ class CollisionHandler {
 
     /**
      * Move all the projectiles and check for collision with the other player and with the walls.
-     * If a projectile hits the other player, that player loses.
+     * If a projectile hits the other player, that player wins.
      * If a projectile hits a wall, it is removed.
-     * @returns {Object} - an object with two properties, `p1Loses` and `p2Loses`, which are
-     * booleans indicating whether the corresponding player loses.
+     * @returns {Object} - an object with two properties, `p1Wins` and `p2Wins`, which are
+     * booleans indicating whether the corresponding player wins.
      */
     moveProjectiles() {
         // internally handle creating new projectiles if applicable
@@ -340,16 +340,16 @@ class CollisionHandler {
         // move projectiles first because on projectile creation, we don't
         // want a game tick to pass first. so render/add them to
         // projectiles AFTER moving all the other existing projectiles
-        let p1Loses = this._moveProjectiles(p1, p2);
-        let p2Loses = this._moveProjectiles(p2, p1);
+        let p1Wins = this._moveProjectiles(p1, p2);
+        let p2Wins = this._moveProjectiles(p2, p1);
         
-        p1Loses = p1Loses || this._handleNewProjectile(p1, p2);
-        p2Loses = p2Loses || this._handleNewProjectile(p2, p1);
+        p1Wins = p1Wins || this._handleNewProjectile(p1, p2);
+        p2Wins = p2Wins || this._handleNewProjectile(p2, p1);
 
         // this is a very leaky abstraction - into collisionHandler
         // but a generic return of "hits" with the source and target
         // seems annoying to parse
-        return { p1Loses, p2Loses }
+        return { p1Wins, p2Wins }
     }
 }
 

@@ -226,13 +226,12 @@ class Game {
 
     tick() {
         this.collisionHandler.movePlayers();
-        const { p1Loses, p2Loses } = this.collisionHandler.moveProjectiles(this.player1, this.player2);
-        const isGameOver = p1Loses || p2Loses;
+        const { p1Wins, p2Wins } = this.collisionHandler.moveProjectiles(this.player1, this.player2);
 
-        if (isGameOver) {
-            if (p2Loses) {
+        if (p1Wins || p2Wins) {
+            if (p1Wins) {
                 this.player1.addScore();
-            } else if (p1Loses) {
+            } else if (p2Wins) {
                 this.player2.addScore();
             }
 
